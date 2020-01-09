@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './Login.css';
+import axios from 'axios';
 
 class Login extends Component {
+    loginSubmit(event){
+        event.preventDefault();
+        console.log('Login Submit');
+    }
+
     render() {
         return (
             <div id="login-container">
@@ -15,7 +21,7 @@ class Login extends Component {
                     <div>
                         <h2>เข้าสู่ระบบ</h2>
                         <hr />
-                        <form>
+                        <form onSubmit={this.loginSubmit}>
                             <div class="social-form-div">
                                 <input type="text" id="username" name="username" placeholder="ชื่อผู้ใช้" />
                             </div>
